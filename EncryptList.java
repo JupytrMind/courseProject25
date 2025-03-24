@@ -1,6 +1,12 @@
+<<<<<<< HEAD
+
+import java.util.LinkedList;
+import java.util.Scanner;
+=======
 import java.util.LinkedList;
 import java.util.Scanner;
 
+>>>>>>> ff47a00f218daac4541643c9ede434cb0889376b
 public class EncryptList {
     
     public static String encrypt(String message, int key) {
@@ -34,7 +40,10 @@ public class EncryptList {
                 continueEncrypting = false;
             }
         }       
+<<<<<<< HEAD
+=======
         // Rework this section 
+>>>>>>> ff47a00f218daac4541643c9ede434cb0889376b
         System.out.println("\nEncrypted Words: ");
         for (String encryptedWord : encryptedWords) {       // Iterate through the LinkedList
             System.out.println(encryptedWord);      // Print each encrypted word
@@ -42,6 +51,8 @@ public class EncryptList {
         scanner.close();
     }
 }
+<<<<<<< HEAD
+=======
 
 /*
 To-Do List:
@@ -52,3 +63,4 @@ The words will be stored in their encrypted order and will return the index to t
 
 
 */ 
+>>>>>>> ff47a00f218daac4541643c9ede434cb0889376b
