@@ -35,6 +35,7 @@ public class EncryptList {
                 continueEncrypting = false;
             }
         }       
+        // Rework this section 
         System.out.println("\nEncrypted Words: ");
         for (String encryptedWord : encryptedWords) {       // Iterate through the LinkedList
             System.out.println(encryptedWord);      // Print each encrypted word
@@ -42,3 +43,13 @@ public class EncryptList {
         scanner.close();
     }
 }
+
+/*
+To-Do List:
+
+Have the LinkedList store the entered words with an index attached for placement verification.
+The words will be stored in their encrypted order and will return the index to the user.
+
+
+
+*/ 
