@@ -1,5 +1,7 @@
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
 
 public class EncryptList {
     
@@ -19,6 +21,8 @@ public class EncryptList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         LinkedList<String> encryptedWords = new LinkedList<>();     // LinkedList to store encrypted words
+        Map<String, String> encryptedWordMap = new HashMap<>();
+
         System.out.println("Enter the encryption key (integer): ");
         int key = scanner.nextInt();
         scanner.nextLine();
@@ -28,27 +32,26 @@ public class EncryptList {
             String word = scanner.nextLine();
             String encryptedWord = encrypt(word, key);
             encryptedWords.add(encryptedWord);      // Adds the encrypted word(s) to the LinkedList.
+            encryptedWordMap.put(word, encryptedWord);      // Stores the original and encrypted words that can be used for a lookup function later on.
+            
+            
+
             System.out.println("Do you have more words to encrypt? (yes/no): ");
             String response = scanner.nextLine().toLowerCase();
             if (!response.equals("yes")) {
                 continueEncrypting = false;
             }
         }       
-        // Rework this section 
         System.out.println("\nEncrypted Words: ");
         for (String encryptedWord : encryptedWords) {       // Iterate through the LinkedList
             System.out.println(encryptedWord);      // Print each encrypted word
         }
+
+        System.out.println("\nOriginal to Encrypted Word Map:");
+        for (Map.Entry<String, String> entry : encryptedWordMap.entrySet()) {
+            System.out.println("Original: " + entry.getKey() + ", Encrypted: " + entry.getValue());
+        }
+        
         scanner.close();
     }
 }
-
-/*
-To-Do List:
-
-Have the LinkedList store the entered words with an index attached for placement verification.
-The words will be stored in their encrypted order and will return the index to the user.
-
-
-
-*/ 
